@@ -1,0 +1,26 @@
+name: AI Agent Audit Trail
+
+# This triggers the security camera to turn on every time code is pushed
+on: [push] 
+
+# SECURITY CLEARANCE (Workflow Permissions)
+permissions:
+  contents: read           # Can look at files, but can't break them (Safe mode)
+  pull-requests: write     # Allowed to leave comments and suggest changes
+
+jobs:
+  monitor-agent:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Workspace
+        uses: actions/checkout@v4
+
+      - name: Simulate AI Work
+        run: echo "The AI agent finished reading the files safely." > ai_receipt.txt
+
+      # OBSERVABILITY & AUDIT (Durable run outputs)
+      - name: Upload Work Receipt
+        uses: actions/upload-artifact@v4
+        with:
+          name: ai-audit-receipt
+          path: ai_receipt.txt
