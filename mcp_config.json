@@ -1,0 +1,12 @@
+{
+    "mcpServers": {
+        "local-workspace": {
+            "command": "mcp-server",
+            "tools": [
+                "search",
+                "read",
+                "learn"
+            ]
+        }
+    }
+}
