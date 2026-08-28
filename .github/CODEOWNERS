@@ -1,0 +1,3 @@
+# Require owner approval for any infrastructure changes
+/.github/workflows/*    @dhirajdayma10
+/.github/agents/*       @dhirajdayma10
